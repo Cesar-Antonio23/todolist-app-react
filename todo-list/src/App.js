@@ -51,7 +51,6 @@ function App() {
 
         const json = await request.json();
         const data = json;
-        console.log('New user response', data)
     }
 
     // Fetch existing data
@@ -64,6 +63,7 @@ function App() {
         const request = await fetch(`https://assets.breatheco.de/apis/fake/todos/user/cesar`, settings);
         const json = await request.json();
         const data = json;
+
         setTodos(data)
     }
 
@@ -78,7 +78,6 @@ function App() {
         const request = await fetch('https://assets.breatheco.de/apis/fake/todos/user/cesar', settings);
         const json = await request.json();
         const data = json;
-        console.log("update response", data);
     }
 
     // Delete all Tasks and user
@@ -88,9 +87,10 @@ function App() {
         })
         const json = await request.json();
         const data = json
+        
         createUser()
         fetchData()
-        console.log("delete response", data)
+
     }
 
     useEffect(() => {
@@ -107,7 +107,7 @@ function App() {
                     updateTodo={updateTodo}
                 />
 
-                <button className="todo-button float-right m-4" variant="secondary" onClick={() => deleteAll()}>Borrar Todo</button>
+                <button className="todo-button float-right m-5" variant="secondary" onClick={() => deleteAll()}>Borrar Todo</button>
 
 
             </div>
